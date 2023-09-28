@@ -5,6 +5,8 @@
 -Poseer una version Actualizada de cualquier navegador WED(Chorme,Morzilla Firefox,Edge)
 -Debe Instalar Xampp en el Ordenado y Ubicar el Repositorio o Carpeta en la carpeta htdocs.
 -Debe Instalar Instalar Mysql en el sistema operativo de preferencia.
+-Debe instalar composer
+-Debe instalar PhpSpreadsheet
 *Ejecucion:
 -Iniciar el servidor Wed Xampp.
--Acceder a la siguiente Ruta:http://localhost/phpprueba/.
+-Acceder a la siguiente Ruta:http://localhost/phpprueba/index.php.

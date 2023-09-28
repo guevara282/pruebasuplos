@@ -1,0 +1,16 @@
+{
+    "name": "guevara282/phpprueba",
+    "autoload": {
+        "psr-4": {
+            "Guevara282\\Phpprueba\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "guevara282"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29"
+    }
+}

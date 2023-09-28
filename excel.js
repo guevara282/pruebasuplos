@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Elementos HTML
+    // se recibe los campos de la vista
     const busquedaInput = document.getElementById("actividad");
     const resultadosDatalist = document.getElementById("resultadosList");
 
-    // Manejar el evento de cambio en el campo de búsqueda
+    // se maneja el evento de cambio en el campo de busqueda
     busquedaInput.addEventListener("input", function () {
-        // Obtener el valor ingresado por el usuario
+        // se obtiene el valor ingresado
         const busqueda = busquedaInput.value;
 
-        // Realizar la búsqueda y mostrar resultados en el datalist
+        // se llama la funcion que realiza la busqueda y el llenado
         buscarActividades(busqueda);
     });
 
-    // Función para buscar actividades y llenar el datalist
+    // funcion para buscar las actividades y llenar el datalist
     function buscarActividades(busqueda) {
-        // Realiza la búsqueda en el archivo Excel (reemplaza 'ruta/al/archivo.xlsx' con la ubicación de tu archivo Excel)
-        const rutaArchivoExcel = 'files/actividad.xlsx'; // Cambia la ruta a tu archivo Excel
+        // se realiza la busqueda en el archivo excel
+        const rutaArchivoExcel = 'files/actividad.xlsx'; 
         const xhr = new XMLHttpRequest();
         xhr.open("GET", rutaArchivoExcel, true);
         xhr.responseType = "arraybuffer";
@@ -25,18 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = new Uint8Array(arrayBuffer);
             const workbook = XLSX.read(data, { type: "array" });
 
-            // Obtener la primera hoja de Excel
+            // se obtiene la primera hoja del excel
             const primeraHoja = workbook.Sheets[workbook.SheetNames[0]];
 
-            // Convertir la hoja de Excel a un array de objetos
+            // se convierte la hoja de excel a un array de objetos
             const actividades = XLSX.utils.sheet_to_json(primeraHoja);
 
-            // Limpiar el datalist
+            // se limpia el datalist para agregar los nuevos datos 
             resultadosDatalist.innerHTML = "";
 
-            // Itera a través de cada registro y agrega el valor de 'NombreProducto' al datalist
+            // se recorre el array y agrega el valor de NombreProducto que es donde esta la actividad y se agrega al datalist  
             for (let i = 0; i < actividades.length; i++) {
-                const nombreProducto = actividades[i].NombreProducto; // Reemplaza 'NombreProducto' con el nombre real de la columna
+                const nombreProducto = actividades[i].NombreProducto; 
                 if (nombreProducto) {
                     const opcion = document.createElement("option");
                     opcion.value = nombreProducto;

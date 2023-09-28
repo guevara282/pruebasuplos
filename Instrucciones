@@ -1,6 +1,6 @@
 *Plataforma Base:
--php 8
--Base de Datos(mysql)
+-php PHP/8.0.28
+-Base de Datos(mysql) libmysql - mysqlnd 8.0.28
 *Pre requesitos de Instalacion :
 -Poseer una version Actualizada de cualquier navegador WED(Chorme,Morzilla Firefox,Edge)
 -Debe Instalar Xampp en el Ordenado y Ubicar el Repositorio o Carpeta en la carpeta htdocs.
